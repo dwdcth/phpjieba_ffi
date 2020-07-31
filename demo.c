@@ -89,9 +89,11 @@ void UserWordDemo()
 }
 
 int main(int argc, char** argv) {
-  CutDemo();
-  CutWithoutTagNameDemo();
-  ExtractDemo();
-  UserWordDemo();
+  for(int i=0;i<20;i++){
+    CutDemo();
+    CutWithoutTagNameDemo();
+    ExtractDemo();
+    UserWordDemo();
+  }
   return 0;
 }
