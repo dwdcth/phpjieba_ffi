@@ -82,9 +82,16 @@ sys     0m4.323s
 
 CPU 占用  基本都是 12%
 
-可以发现使用FFI，PHP的速度基本和C差不多，如有CPU占用大的业务，可以尝试使用其它语言编写然后生成标准C的动态库。
+可以发现使用FFI，PHP的速度基本和C差不多，如有CPU占用大的业务，可以尝试使用其它语言（C/C++,golang,Rust等）编写然后导出标准C的动态库。
 
+# FFI的用途
+在没有FFI之前，需要系统调用或者sdk方式调用的地方，PHP就需要开发扩展，但是开发扩展不仅需要理解C语言，还得了解PHP内核，比较困难。
+现在就方便多了，直接使用FFI调用动态库即可。
 
+## 扩展 宏展开
+比如海康的sdk里有大量的宏
+`gcc -E -P HCNetSDK.h -o HCNetSDK_unfold.h`
+支持 type define 放心使用
 
 ## 原 Readme
 [README](README_cjieba.md)
