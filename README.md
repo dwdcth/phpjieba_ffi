@@ -48,8 +48,7 @@ CJiebaWord* Cut(Jieba handle, const char* sentence, size_t len) {
   for (x = words; x->word; x++) {
     printf("%*.*s\n", x->len, x->len, x->word);
   }
-``
-
+```
 
 # 用法示例
 
@@ -64,6 +63,7 @@ CJiebaWord* Cut(Jieba handle, const char* sentence, size_t len) {
 make demo
 time ./demo
 ```
+
 ## 结果
 ```
 PHP
@@ -79,6 +79,7 @@ real    1m54.738s
 user    1m50.382s
 sys     0m4.323s
 ```
+
 CPU 占用  基本都是 12%
 
 可以发现使用FFI，PHP的速度基本和C差不多，如有CPU占用大的业务，可以尝试使用其它语言编写然后生成标准C的动态库。
